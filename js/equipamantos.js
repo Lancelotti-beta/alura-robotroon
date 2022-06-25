@@ -12,7 +12,11 @@ adiciona.forEach(function (botaoAdicionar, i) {
 subtrai.forEach(function (botaoSubtrair, i) {
 
     botaoSubtrair.addEventListener('click', function (){
-        ponto[i].value = parseInt(ponto[i].value) - 1;
+        if(ponto[i].value >= 1) {
+            ponto[i].value = parseInt(ponto[i].value) - 1;
+        } else {
+            return;
+        }
     });
 });
 
