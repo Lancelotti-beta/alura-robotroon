@@ -1,6 +1,6 @@
 const adiciona = document.querySelectorAll('.controle-ajuste-adiciona');
 const subtrai = document.querySelectorAll('.controle-ajuste-subtrai');
-const ponto = document.querySelectorAll('.controle-contador');
+const ponto = document.querySelectorAll('.controle-contador')
 
 adiciona.forEach(function (botaoAdicionar, i) {
 
@@ -19,4 +19,3 @@ subtrai.forEach(function (botaoSubtrair, i) {
         }
     });
 });
-
