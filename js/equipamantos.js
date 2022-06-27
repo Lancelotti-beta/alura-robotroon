@@ -1,21 +1,35 @@
-const adiciona = document.querySelectorAll('.controle-ajuste-adiciona');
-const subtrai = document.querySelectorAll('.controle-ajuste-subtrai');
-const ponto = document.querySelectorAll('.controle-contador')
+const elemento = document.querySelectorAll('[data-controle]');
 
-adiciona.forEach(function (botaoAdicionar, i) {
+const estatistica = document.querySelectorAll('[data-estatistica]');
 
-    botaoAdicionar.addEventListener('click', function (){
-        ponto[i].value = parseInt(ponto[i].value) + 1;
-    });
-});
 
-subtrai.forEach(function (botaoSubtrair, i) {
+elemento.forEach(function (controle){
+    controle.addEventListener('click', function(evento){
+        pontosDeEquipamentos(evento.target.parentNode, evento.target.dataset.controle);
+        calculaEstatistica(evento.target.dataset.pecas);
+    })
+})
 
-    botaoSubtrair.addEventListener('click', function (){
-        if(ponto[i].value >= 1) {
-            ponto[i].value = parseInt(ponto[i].value) - 1;
+function pontosDeEquipamentos(elemento, operador){
+    const ponto = elemento.querySelector('[data-contador]');
+
+    if(operador === '+'){
+        ponto.value = parseInt(ponto.value) + 1;
+    } else {
+        if(ponto.value >= 1) {
+            ponto.value = parseInt(ponto.value) - 1;
         } else {
             return;
         }
-    });
-});
+    }
+
+}
+
+function calculaEstatistica(equipamento) {
+    const valorDasPecas = estatisticaValores();
+    
+    estatistica.forEach(function (elemento){
+        elemento.textContent = parseInt(elemento.textContent) + valorDasPecas[equipamento][elemento.dataset.estatistica];
+    })
+}
+
