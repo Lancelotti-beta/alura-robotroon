@@ -208,6 +208,12 @@ main {
     margin: 10px 0 0;
 }
 
+/****************************** Swiper *****/
+/* .swiper-button-prev,
+.swiper-button-next {
+
+} */
+
 @media screen and (max-width: 1600px) {
     body { 
         font-size: 14px;
