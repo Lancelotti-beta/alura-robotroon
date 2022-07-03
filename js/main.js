@@ -6,7 +6,7 @@ botaoUpgrade.value = 'New Upgrade';
 const swiper = new Swiper('.swiper', {
     slidesPerView: 1,
     spaceBetween: 0,
-    direction: 'vertical',
+    direction: 'horizontal',
     loop: true,
     // navigation: {
     //     nextEl: '.swiper-button-next',
